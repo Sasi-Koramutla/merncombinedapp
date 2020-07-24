@@ -3,7 +3,7 @@ const tweetBattle = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/user.js');
-const TOKEN_SECRET = process.env.SECRET;
+const TOKEN_SECRET = process.env.SECRET || "SECRET";
 
 // LOGIN ROUTE
 tweetBattle.post('/login', (req, res) => {
@@ -103,5 +103,7 @@ tweetBattle.delete('/', (req, res) => {
 
     })
   });
+
+
   
   module.exports = tweetBattle
